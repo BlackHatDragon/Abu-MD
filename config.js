@@ -6,7 +6,7 @@ const { existsSync } = require("fs")
 
 if (existsSync("config.env")) require("dotenv").config({ path: "./config.env" })
 
-const DATABASE_URL = process.env.DATABASE_URL === undefined ? "./lib/database.db" : process.env.DATABASE_URL
+const DATABASE_URL = process.env.DATABASE_URL === undefined ? ".postgres://raimus_user:UzTliYb3tq4zyNRmeEpVo7PNjIBsPZjR@dpg-cljnqqhll56s73bn48og-a.oregon-postgres.render.com/raimus" : process.env.DATABASE_URL
 
 module.exports = {
 
