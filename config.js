@@ -16,7 +16,7 @@ module.exports = {
 
   ALIVE_DATA : process.env.ALIVE_DATA || "_iam alive now &sender_",
 
-  DATABASE: DATABASE_URL === "postgres://raimus_user:UzTliYb3tq4zyNRmeEpVo7PNjIBsPZjR@dpg-cljnqqhll56s73bn48og-a.oregon-postgres.render.com/raimus" ? new Sequelize({ dialect: "sqlite", storage: DATABASE_URL, logging: false }) : new Sequelize(DATABASE_URL, {dialect: "postgres", ssl: true, protocol: "postgres", dialectOptions: { native: true, ssl: { require: true, rejectUnauthorized: false },}, logging: false }),
+  DATABASE: DATABASE_URL === "" ? new Sequelize({ dialect: "sqlite", storage: DATABASE_URL, logging: false }) : new Sequelize(DATABASE_URL, {dialect: "postgres", ssl: true, protocol: "postgres", dialectOptions: { native: true, ssl: { require: true, rejectUnauthorized: false },}, logging: false }),
 
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
 
